@@ -1,0 +1,167 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 630256 bytes for Chunk::new
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Unscaled Compressed Oops mode in which the Java heap is
+#     placed in the first 4GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 4GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (src/hotspot/share/memory/arena.cpp:197), pid=10444, tid=7180
+#
+# JRE version: OpenJDK Runtime Environment (11.0.15) (build 11.0.15+0-b2043.56-9505619)
+# Java VM: OpenJDK 64-Bit Server VM (11.0.15+0-b2043.56-9505619, mixed mode, tiered, compressed oops, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.invoke=ALL-UNNAMED --add-opens=java.prefs/java.util.prefs=ALL-UNNAMED --add-opens=java.base/java.nio.charset=ALL-UNNAMED --add-opens=java.base/java.net=ALL-UNNAMED --add-opens=java.base/java.util.concurrent.atomic=ALL-UNNAMED -Xmx2048m -Dfile.encoding=UTF-8 -Duser.country=KR -Duser.language=ko -Duser.variant org.gradle.launcher.daemon.bootstrap.GradleDaemon 8.0
+
+Host: Intel(R) Core(TM) i5-10210U CPU @ 1.60GHz, 8 cores, 7G,  Windows 11 , 64 bit Build 22621 (10.0.22621.1928)
+Time: Wed Aug  2 12:01:27 2023  Windows 11 , 64 bit Build 22621 (10.0.22621.1928) elapsed time: 1808.282701 seconds (0d 0h 30m 8s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0000013f6de52800):  JavaThread "C2 CompilerThread0" daemon [_thread_in_native, id=7180, stack(0x0000002e80300000,0x0000002e80400000)]
+
+
+Current CompileTask:
+C2:1808282 41599   !   4       org.gradle.internal.event.DefaultListenerManager$EventBroadcast::maybeAdd (103 bytes)
+
+Stack: [0x0000002e80300000,0x0000002e80400000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x64135a]
+V  [jvm.dll+0x7d39f9]
+V  [jvm.dll+0x7d51b9]
+V  [jvm.dll+0x7d58a3]
+V  [jvm.dll+0x2691c5]
+V  [jvm.dll+0xc1a5c]
+V  [jvm.dll+0xc200c]
+V  [jvm.dll+0x377462]
+V  [jvm.dll+0x1b3914]
+V  [jvm.dll+0x22163e]
+V  [jvm.dll+0x220498]
+V  [jvm.dll+0x19e851]
+V  [jvm.dll+0x230479]
+V  [jvm.dll+0x22e5ef]
+V  [jvm.dll+0x794de1]
+V  [jvm.dll+0x78dc24]
+V  [jvm.dll+0x6400f6]
+C  [ucrtbase.dll+0x29363]
+C  [KERNEL32.DLL+0x126ad]
+C  [ntdll.dll+0x5aa68]
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x0000013f775ae990, length=64, elements={
+0x0000013f5308c000, 0x0000013f6d533800, 0x0000013f6d536800, 0x0000013f6d55e000,
+0x0000013f6de4b800, 0x0000013f6de4e000, 0x0000013f6de52800, 0x0000013f6de53800,
+0x0000013f6de6f800, 0x0000013f6dfce800, 0x0000013f6f460000, 0x0000013f71946800,
+0x0000013f70130000, 0x0000013f6ec7e000, 0x0000013f6ec82000, 0x0000013f6ec80800,
+0x0000013f6ec7c800, 0x0000013f6ec7d000, 0x0000013f6ec7e800, 0x0000013f71833800,
+0x0000013f71832000, 0x0000013f71837000, 0x0000013f71833000, 0x0000013f71838800,
+0x0000013f71835000, 0x0000013f6e45e000, 0x0000013f6e463000, 0x0000013f6e464800,
+0x0000013f6e461800, 0x0000013f782ba800, 0x0000013f75518000, 0x0000013f75519000,
+0x0000013f75525000, 0x0000013f75522000, 0x0000013f7551f800, 0x0000013f77463000,
+0x0000013f72ea2800, 0x0000013f72f17000, 0x0000013f7183e000, 0x0000013f72f18000,
+0x0000013f72f1c800, 0x0000013f71840800, 0x0000013f6f1de000, 0x0000013f00ca6000,
+0x0000013f7e4dd800, 0x0000013f7e4eb800, 0x0000013f7e4e6000, 0x0000013f7e4e6800,
+0x0000013f7e4ec800, 0x0000013f7e4ea000, 0x0000013f7e4ea800, 0x0000013f7745e000,
+0x0000013f77461000, 0x0000013f6e456000, 0x0000013f6e459800, 0x0000013f6e45c800,
+0x0000013f6e45b000, 0x0000013f6e457800, 0x0000013f6e45b800, 0x0000013f6e457000,
+0x0000013f6e45d800, 0x0000013f6e45a000, 0x0000013f6e458800, 0x0000013f6e45f000
+}
+
+Java Threads: ( => current thread )
+  0x0000013f5308c000 JavaThread "main" [_thread_blocked, id=6636, stack(0x0000002eff700000,0x0000002eff800000)]
+  0x0000013f6d533800 JavaThread "Reference Handler" daemon [_thread_blocked, id=7212, stack(0x0000002effe00000,0x0000002efff00000)]
+  0x0000013f6d536800 JavaThread "Finalizer" daemon [_thread_blocked, id=7204, stack(0x0000002efff00000,0x0000002f00000000)]
+  0x0000013f6d55e000 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=13636, stack(0x0000002e80000000,0x0000002e80100000)]
+  0x0000013f6de4b800 JavaThread "Attach Listener" daemon [_thread_blocked, id=7240, stack(0x0000002e80100000,0x0000002e80200000)]
+  0x0000013f6de4e000 JavaThread "Service Thread" daemon [_thread_blocked, id=7232, stack(0x0000002e80200000,0x0000002e80300000)]
+=>0x0000013f6de52800 JavaThread "C2 CompilerThread0" daemon [_thread_in_native, id=7180, stack(0x0000002e80300000,0x0000002e80400000)]
+  0x0000013f6de53800 JavaThread "C1 CompilerThread0" daemon [_thread_blocked, id=6544, stack(0x0000002e80400000,0x0000002e80500000)]
+  0x0000013f6de6f800 JavaThread "Sweeper thread" daemon [_thread_blocked, id=8952, stack(0x0000002e80500000,0x0000002e80600000)]
+  0x0000013f6dfce800 JavaThread "Common-Cleaner" daemon [_thread_blocked, id=8956, stack(0x0000002e80600000,0x0000002e80700000)]
+  0x0000013f6f460000 JavaThread "Daemon health stats" [_thread_blocked, id=4240, stack(0x0000002e80c00000,0x0000002e80d00000)]
+  0x0000013f71946800 JavaThread "Incoming local TCP Connector on port 49849" [_thread_in_native, id=13324, stack(0x0000002e80800000,0x0000002e80900000)]
+  0x0000013f70130000 JavaThread "Daemon periodic checks" [_thread_blocked, id=13416, stack(0x0000002e80b00000,0x0000002e80c00000)]
+  0x0000013f6ec7e000 JavaThread "Cache worker for journal cache (C:\Users\user\.gradle\caches\journal-1)" [_thread_blocked, id=6500, stack(0x0000002e81900000,0x0000002e81a00000)]
+  0x0000013f6ec82000 JavaThread "File lock request listener" [_thread_in_native, id=5772, stack(0x0000002e81b00000,0x0000002e81c00000)]
+  0x0000013f6ec80800 JavaThread "Cache worker for file hash cache (C:\Users\user\.gradle\caches\8.0\fileHashes)" [_thread_blocked, id=3400, stack(0x0000002e81c00000,0x0000002e81d00000)]
+  0x0000013f6ec7c800 JavaThread "File watcher server" daemon [_thread_in_native, id=6952, stack(0x0000002e81e00000,0x0000002e81f00000)]
+  0x0000013f6ec7d000 JavaThread "File watcher consumer" daemon [_thread_blocked, id=11012, stack(0x0000002e81f00000,0x0000002e82000000)]
+  0x0000013f6ec7e800 JavaThread "Cache worker for file content cache (C:\Users\user\.gradle\caches\8.0\fileContent)" [_thread_blocked, id=4948, stack(0x0000002e82200000,0x0000002e82300000)]
+  0x0000013f71833800 JavaThread "Cache worker for execution history cache (C:\Users\user\.gradle\caches\8.0\executionHistory)" [_thread_blocked, id=6188, stack(0x0000002e82500000,0x0000002e82600000)]
+  0x0000013f71832000 JavaThread "jar transforms" [_thread_blocked, id=11064, stack(0x0000002e81d00000,0x0000002e81e00000)]
+  0x0000013f71837000 JavaThread "jar transforms Thread 2" [_thread_blocked, id=13668, stack(0x0000002e82700000,0x0000002e82800000)]
+  0x0000013f71833000 JavaThread "jar transforms Thread 3" [_thread_blocked, id=8332, stack(0x0000002e82900000,0x0000002e82a00000)]
+  0x0000013f71838800 JavaThread "jar transforms Thread 4" [_thread_blocked, id=8312, stack(0x0000002e82a00000,0x0000002e82b00000)]
+  0x0000013f71835000 JavaThread "jar transforms Thread 5" [_thread_blocked, id=9164, stack(0x0000002e82600000,0x0000002e82700000)]
+  0x0000013f6e45e000 JavaThread "jar transforms Thread 6" [_thread_blocked, id=5708, stack(0x0000002e82d00000,0x0000002e82e00000)]
+  0x0000013f6e463000 JavaThread "jar transforms Thread 7" [_thread_blocked, id=7408, stack(0x0000002e87e00000,0x0000002e87f00000)]
+  0x0000013f6e464800 JavaThread "jar transforms Thread 8" [_thread_blocked, id=5696, stack(0x0000002e87f00000,0x0000002e88000000)]
+  0x0000013f6e461800 JavaThread "Memory manager" [_thread_blocked, id=10564, stack(0x0000002e88200000,0x0000002e88300000)]
+  0x0000013f782ba800 JavaThread "pool-5-thread-1" [_thread_blocked, id=5740, stack(0x0000002e82e00000,0x0000002e82f00000)]
+  0x0000013f75518000 JavaThread "RMI Scheduler(0)" daemon [_thread_blocked, id=11260, stack(0x0000002e81200000,0x0000002e81300000)]
+  0x0000013f75519000 JavaThread "RMI GC Daemon" daemon [_thread_blocked, id=9520, stack(0x0000002e89400000,0x0000002e89500000)]
+  0x0000013f75525000 JavaThread "RMI TCP Accept-0" daemon [_thread_in_native, id=12352, stack(0x0000002e8a600000,0x0000002e8a700000)]
+  0x0000013f75522000 JavaThread "RMI Reaper" [_thread_blocked, id=10456, stack(0x0000002e8a700000,0x0000002e8a800000)]
+  0x0000013f7551f800 JavaThread "Cache worker for Java compile cache (C:\Users\user\.gradle\caches\8.0\javaCompile)" [_thread_blocked, id=2276, stack(0x0000002e82800000,0x0000002e82900000)]
+  0x0000013f77463000 JavaThread "ForkJoinPool.commonPool-worker-15" daemon [_thread_blocked, id=8356, stack(0x0000002e8b100000,0x0000002e8b200000)]
+  0x0000013f72ea2800 JavaThread "pool-10-thread-1" [_thread_blocked, id=4564, stack(0x0000002e88500000,0x0000002e88600000)]
+  0x0000013f72f17000 JavaThread "pool-15-thread-1" [_thread_blocked, id=3640, stack(0x0000002e88800000,0x0000002e88900000)]
+  0x0000013f7183e000 JavaThread "pool-18-thread-1" [_thread_blocked, id=2016, stack(0x0000002e88700000,0x0000002e88800000)]
+  0x0000013f72f18000 JavaThread "Daemon Thread 6" [_thread_blocked, id=14536, stack(0x0000002e80d00000,0x0000002e80e00000)]
+  0x0000013f72f1c800 JavaThread "Daemon worker Thread 6" [_thread_in_vm, id=14568, stack(0x0000002e81000000,0x0000002e81100000)]
+  0x0000013f71840800 JavaThread "pool-22-thread-1" [_thread_blocked, id=14960, stack(0x0000002e88900000,0x0000002e88a00000)]
+  0x0000013f6f1de000 JavaThread "included builds" [_thread_blocked, id=14980, stack(0x0000002e88b00000,0x0000002e88c00000)]
+  0x0000013f00ca6000 JavaThread "RMI RenewClean-[127.0.0.1:17148,org.jetbrains.kotlin.daemon.common.LoopbackNetworkInterface$ClientLoopbackSocketFactory@a645c81]" daemon [_thread_blocked, id=8868, stack(0x0000002e8af00000,0x0000002e8b000000)]
+  0x0000013f7e4dd800 JavaThread "RMI TCP Connection(idle)" daemon [_thread_blocked, id=7996, stack(0x0000002e83100000,0x0000002e83200000)]
+  0x0000013f7e4eb800 JavaThread "ForkJoinPool.commonPool-worker-1" daemon [_thread_blocked, id=14516, stack(0x0000002e8ae00000,0x0000002e8af00000)]
+  0x0000013f7e4e6000 JavaThread "ForkJoinPool.commonPool-worker-3" daemon [_thread_blocked, id=14492, stack(0x0000002e8b200000,0x0000002e8b300000)]
+  0x0000013f7e4e6800 JavaThread "ForkJoinPool.commonPool-worker-5" daemon [_thread_blocked, id=14544, stack(0x0000002e8b300000,0x0000002e8b400000)]
+  0x0000013f7e4ec800 JavaThread "ForkJoinPool.commonPool-worker-7" daemon [_thread_blocked, id=3596, stack(0x0000002e8b400000,0x0000002e8b500000)]
+  0x0000013f7e4ea000 JavaThread "ForkJoinPool.commonPool-worker-9" daemon [_thread_blocked, id=7796, stack(0x0000002e8b500000,0x0000002e8b600000)]
+  0x0000013f7e4ea800 JavaThread "ForkJoinPool.commonPool-worker-11" daemon [_thread_blocked, id=14512, stack(0x0000002e88600000,0x0000002e88700000)]
+  0x0000013f7745e000 JavaThread "pool-27-thread-1" [_thread_blocked, id=8352, stack(0x0000002e88c00000,0x0000002e88d00000)]
+  0x0000013f77461000 JavaThread "included builds" [_thread_blocked, id=5220, stack(0x0000002e88e00000,0x0000002e88f00000)]
+  0x0000013f6e456000 JavaThread "Handler for socket connection from /127.0.0.1:49849 to /127.0.0.1:51201" [_thread_in_native, id=3604, stack(0x0000002e80e00000,0x0000002e80f00000)]
+  0x0000013f6e459800 JavaThread "Cancel handler" [_thread_blocked, id=5808, stack(0x0000002e80f00000,0x0000002e81000000)]
+  0x0000013f6e45c800 JavaThread "Asynchronous log dispatcher for DefaultDaemonConnection: socket connection from /127.0.0.1:49849 to /127.0.0.1:51201" [_thread_blocked, id=15324, stack(0x0000002e81100000,0x0000002e81200000)]
+  0x0000013f6e45b000 JavaThread "Stdin handler" [_thread_blocked, id=4696, stack(0x0000002e81300000,0x0000002e81400000)]
+  0x0000013f6e457800 JavaThread "Daemon client event forwarder" [_thread_blocked, id=1696, stack(0x0000002e82000000,0x0000002e82100000)]
+  0x0000013f6e45b800 JavaThread "Cache worker for checksums cache (C:\Users\user\Desktop\github_ww\WW_Client\.gradle\8.0\checksums)" [_thread_blocked, id=13884, stack(0x0000002e82100000,0x0000002e82200000)]
+  0x0000013f6e457000 JavaThread "Cache worker for cache directory md-rule (C:\Users\user\.gradle\caches\8.0\md-rule)" [_thread_blocked, id=7252, stack(0x0000002e82300000,0x0000002e82400000)]
+  0x0000013f6e45d800 JavaThread "Cache worker for file hash cache (C:\Users\user\Desktop\github_ww\WW_Client\.gradle\8.0\fileHashes)" [_thread_blocked, id=12424, stack(0x0000002e82400000,0x0000002e82500000)]
+  0x0000013f6e45a000 JavaThread "Cache worker for cache directory md-supplier (C:\Users\user\.gradle\caches\8.0\md-supplier)" [_thread_blocked, id=1928, stack(0x0000002e82b00000,0x0000002e82c00000)]
+  0x0000013f6e458800 JavaThread "Cache worker for dependencies-accessors (C:\Users\user\Desktop\github_ww\WW_Client\.gradle\8.0\dependencies-accessors)" [_thread_blocked, id=11476, stack(0x0000002e82c00000,0x0000002e82d00000)]
+  0x0000013f6e45f000 JavaThread "Cache worker for Build Output Cleanup Cache (C:\Users\user\Desktop\github_ww\WW_Client\.gradle\buildOutputCleanup)" [_thread_blocked, id=12552, stack(0x0000002e82f00000,0x0000002e83000000)]
+
+Other Threads:
+  0x0000013f6d530800 VMThread "VM Thread" [stack: 0x0000002effd00000,0x0000002effe00000] [id=6660]
+  0x0000013f6dfdd000 WatcherThread [stack: 0x0000002e80700000,0x0000002e80800000] [id=8960]
+  0x0000013f530a8000 GCTaskThread "GC Thread#0" [stack: 0x0000002eff800000,0x0000002eff900000] [id=6872]
+  0x0000013f6ecba000 GCTaskThread "GC Thread#1" [stack: 0x0000002e80900000,0x0000002e80a00000] [id=7708]
+  0x0000013f6e867800 GCTaskThread "GC Thread#2" [stack: 0x0000002e80a00000,0x0000002e80b00000] [id=13604]
+  0x0000013f71f70800 GCTaskThread "GC Thread#3" [stack: 0x0000002e81400000,0x0000002e81500000] [id=2876]
+  0x0000013f717ef800 GCTaskThread "GC Thread#4" [stack: 0x0000002e81500000,0x0000002e81600000] [id=3752]
+  0x0000013f70006800 GCTaskThread "GC Thread#5" [stack: 0x0000002e81600000,0x0000002e81700000] [id=9152]
+  0x0000013f70007000 GCTaskThread "GC Thread#6" [stack: 0x0000002e81700000,0x0000002e81800000] [id=8380]
+  0x0000013f6f175800 GCTaskThread "GC Thread#7" [stack: 0x0000002e81800000,0x0000002e81900000] [id=10776]
+  0x0000013f530da800 ConcurrentGCThread "G1 Main Marker" [stack: 0x0000002eff900000,0x0000002effa00000] [id=6824]
+  0x0000013f530db800 ConcurrentGCThread "G1 Conc#0" [stack: 0x0000002effa00000,0x0000002effb00000] [id=6640]
